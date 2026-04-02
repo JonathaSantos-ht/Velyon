@@ -25,7 +25,7 @@ import { motion, AnimatePresence } from 'motion/react';
 
 const WHATSAPP_LINK = "https://wa.me/5532998473363";
 const INSTAGRAM_LINK = "https://www.instagram.com/velyon.dev/";
-const LOGO_URL = "https://i.im.ge/2026/04/02/epjC6X.Design-sem-nome.png";
+const LOGO_URL = "https://i.im.ge/2026/04/02/epwfhm.Sem-nome-1800-x-1800-px.png?v=1";
 
 const Section = ({ children, className = "", id = "" }: { children: React.ReactNode, className?: string, id?: string }) => (
   <section id={id} className={`py-12 md:py-20 px-6 ${className}`}>
