@@ -25,7 +25,7 @@ import { motion, AnimatePresence } from 'motion/react';
 
 const WHATSAPP_LINK = "https://wa.me/5532998473363";
 const INSTAGRAM_LINK = "https://www.instagram.com/velyon.dev/";
-const LOGO_URL = "https://i.im.ge/2026/04/02/epwfhm.Sem-nome-1800-x-1800-px.png?v=1";
+const LOGO_URL = "https://cdn.phototourl.com/member/2026-04-07-9c0630b0-ab8b-43a9-a2ee-f2e405183a1b.png";
 
 const Section = ({ children, className = "", id = "" }: { children: React.ReactNode, className?: string, id?: string }) => (
   <section id={id} className={`py-12 md:py-20 px-6 ${className}`}>
@@ -321,24 +321,67 @@ export default function App() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 md:border-8 border-white group">
+            {/* Background Glows */}
+            <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full -z-10" />
+            
+            {/* Main Mockup Container */}
+            <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-[0_32px_64px_-12px_rgba(0,0,0,0.4)] border-8 border-white group">
               <img 
-                src="https://i.im.ge/2026/04/02/epjbcY.FireShot-Capture-014-Fotografo-Profissional-Link-na-Bio-lensmasterpremium-netlify-app.png" 
-                alt="Exemplo de Site Profissional" 
-                className="w-full h-auto group-hover:scale-110 transition-transform duration-1000"
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop" 
+                alt="Plataforma Profissional" 
+                className="w-full h-auto group-hover:scale-105 transition-transform duration-1000"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-                <p className="text-white font-bold text-lg">Design Moderno & Responsivo</p>
+              <div className="absolute inset-0 bg-linear-to-tr from-primary/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </div>
+
+            {/* Floating UI Elements */}
+            <motion.div 
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-10 -left-6 bg-white p-4 rounded-2xl shadow-xl z-20 border border-slate-100 flex items-center gap-4 hidden md:flex"
+            >
+              <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                <CheckCircle2 className="w-6 h-6" />
               </div>
-            </div>
-            <div className="absolute -bottom-4 md:-bottom-6 -left-4 md:-left-6 glass p-4 md:p-6 rounded-2xl shadow-xl z-20 hidden sm:block">
-              <p className="text-primary font-black text-xl md:text-2xl mb-1">A partir de</p>
-              <p className="text-slate-900 font-extrabold text-2xl md:text-4xl">R$ 249,90</p>
-            </div>
-            <div className="absolute -top-4 md:-top-6 -right-4 md:-right-6 bg-accent p-3 md:p-4 rounded-2xl shadow-xl z-20 text-white font-bold hidden sm:block">
-              <Zap className="w-6 h-6 md:w-8 md:h-8 mb-1 md:mb-2" />
-              100% Otimizado
+              <div>
+                <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">Status</p>
+                <p className="text-slate-900 font-black">Site Publicado!</p>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              className="absolute top-1/2 -right-10 bg-slate-900 text-white p-5 rounded-2xl shadow-2xl z-20 border border-white/10 hidden md:block"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+                <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Real-time Analytics</p>
+              </div>
+              <div className="flex items-end gap-1">
+                <span className="text-3xl font-black text-white">99</span>
+                <span className="text-accent font-bold mb-1">Score SEO</span>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -bottom-6 -right-6 bg-accent p-6 rounded-3xl shadow-2xl z-20 text-white hidden sm:block"
+            >
+              <Zap className="w-10 h-10 mb-2 fill-current" />
+              <p className="font-black text-xl leading-tight">Velocidade<br/>Máxima</p>
+            </motion.div>
+
+            {/* Pricing Badge */}
+            <div className="absolute -bottom-8 -left-8 glass p-6 rounded-3xl shadow-2xl z-20 hidden lg:block border border-white/40">
+              <p className="text-primary font-black text-lg mb-1">Investimento</p>
+              <div className="flex items-baseline gap-1">
+                <span className="text-slate-500 text-sm font-bold">12x</span>
+                <span className="text-slate-900 font-extrabold text-4xl tracking-tighter">R$ 24,90</span>
+              </div>
+              <p className="text-[10px] text-slate-500 font-bold uppercase mt-2">Ou R$ 249,90 à vista</p>
             </div>
           </motion.div>
         </div>
@@ -368,7 +411,7 @@ export default function App() {
           <div className="order-2 md:order-1 group">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-50">
               <img 
-                src="https://i.im.ge/2026/04/02/epjEK8.3334882-desktop-source-code-and-wallpaper-by-coding-and-programming-gratis-foto.jpeg" 
+                src="https://cdn.phototourl.com/member/2026-04-07-517ac6c0-ae5a-4124-b1b5-a91ccae62509.png" 
                 alt="Desenvolvimento de Código Profissional" 
                 className="w-full h-auto group-hover:scale-110 transition-transform duration-1000"
                 referrerPolicy="no-referrer"
